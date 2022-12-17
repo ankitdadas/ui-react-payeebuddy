@@ -1,6 +1,6 @@
 import React from "react";
-import { styled, useTheme } from '@mui/material/styles';
-import MuiAppBar from '@mui/material/AppBar';
+import { styled, useTheme } from '@mui/material';
+import {MuiAppBar, Divider} from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer'; 
 import List from '@mui/material/List'; 
 import ListItem from '@mui/material/ListItem';
@@ -9,13 +9,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
-
- 
 import Link from "next/link";
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
 
 
 const drawerWidth = 240;
@@ -36,7 +32,7 @@ const closedMixin = (theme) => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: 'hidden',
-  paddingTop: "80px",
+
   width: `calc(${theme.spacing(7)} + 1px)`,
   [theme.breakpoints.up('sm')]: {
     width: `calc(${theme.spacing(8)} + 1px)`,
@@ -89,8 +85,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 
-const Sidebar = () => {
 
+const Sidebar = () => {
 
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -126,7 +122,7 @@ const Sidebar = () => {
   return (
     <>
       
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} sx={{ marginTop: "60px", top: "80px" }}>
         {/* <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}

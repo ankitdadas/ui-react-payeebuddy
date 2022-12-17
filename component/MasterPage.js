@@ -19,7 +19,7 @@ export default function Masterpage() {
      <HeaderAuth/>
      <Box sx={{display:"flex"}}>
          <Sidebar />  
-         <Box sx={{ width: "calc(100% - 80px)", marginRight: "0px", marginLeft: "auto" }}>
+         <Box sx={{ width: "calc(100% - 280px)", marginRight: "0px", marginLeft: "auto" }}>
             <RoleModule />
          </Box>
          </Box>
