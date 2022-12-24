@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, useTheme } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
 import {MuiAppBar, Divider} from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer'; 
 import List from '@mui/material/List'; 
@@ -39,32 +39,8 @@ const closedMixin = (theme) => ({
   },
 });
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-}));
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
+
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -123,12 +99,7 @@ const Sidebar = () => {
     <>
       
       <Drawer variant="permanent" open={open} sx={{ marginTop: "60px", top: "80px" }}>
-        {/* <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </DrawerHeader> */}
-        {/*   <Divider /> */}
+      
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
 
